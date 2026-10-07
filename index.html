@@ -1014,6 +1014,20 @@
             });
         });
     </script>
-    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+    <!-- ... tu código de JavaScript anterior ... -->
+
+    <!-- Script de GloriaFood SIN defer ni async -->
+    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js"></script>
+    
+    <!-- Empujón manual para forzar que los botones respondan -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof window.glfBindButtons === 'function') {
+                    window.glfBindButtons();
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
